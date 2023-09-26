@@ -31,3 +31,13 @@ if(clientWidth > 1000) {
     },
   });
 }
+
+var swiper = new Swiper(".heroSwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});

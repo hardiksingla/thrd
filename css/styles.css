@@ -95,7 +95,10 @@ body{
 .carousel-inner{
   position: relative;
 }
-
+.sneakPeak{
+  height: 70vh;
+  position: relative;
+}
 .sneakPeak h1{
   text-align: center;
   padding-top: 70px;
@@ -109,19 +112,29 @@ body{
 }
 .card{
   max-width: 50vw;
+  max-height: 70vh;
   font-size: 30px;
   border: transparent;
   padding-bottom: 10px;
+  margin-bottom: 0;
+  position: relative;
+}
+.card a::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
 }
 .card img{
-  width: 100%;  
-  max-height: 50vh;
+  width: 100%;
   object-fit: cover;
 }
-.swiper-slide-active{
-  height: 500vh;
+.swiper-pagination{
+  position: absolute;
 }
-
 
 :root {
   --marquee-width: 100%;
@@ -174,7 +187,7 @@ body{
   white-space: nowrap;
 }
 
-@media (max-width: 600px) {
+/* @media (max-width: 600px) {
   html { font-size: 12px; }
   :root {
     --marquee-width: 100vw;
@@ -182,7 +195,7 @@ body{
     --marquee-elements-displayed: 5;
   }
   .marquee:before, .marquee:after { width: 5rem; }
-}
+} */
 
 .seal {
   margin-top: 2vh;
@@ -206,8 +219,7 @@ body{
 .seal p{
   font-size: 30px;
   width: 33vw;
-  text-align: center;
-  
+  text-align: center;  
 }
 
 @media (max-width: 1000px) {
@@ -226,4 +238,86 @@ body{
   .seal p{
     width: 70vw;
   }
+  .mySwiper .swiper-wrapper .swiper-slide-active img {
+    animation: onActive 0.5s forwards;
+    animation-duration: 0.5s;
+  }
+}  
+
+  /* @keyframes onActive {
+    from {
+      height: var(--img-height);
+    }
+    to {
+      height: calc(var(--img-height) + 50px);
+    }
+  }
+   */
+
+footer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+
+footer h1{
+  font-size: 40px;
+  font-family: "ClashDisplaySemiBold";
+  text-wrap: wrap;
+  text-align: center;
+  margin:20px 50px
+}
+footer a{
+  box-sizing: border-box;
+  font-size: 20px;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: white;
+  font-family: "ClashDisplay";
+  margin:20px 50px
+}
+footer p{
+  font-size: 35px;
+  text-align: center;
+  margin:20px 50px
+}
+footer .message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: centered;
+  width: 100%;
+  height: 30vh;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+.main,.sec{
+  text-decoration: none;
+  list-style: none;  
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+.links .main li{
+  font-size: 40px;  
+}
+.sec{
+  flex-wrap: wrap;
+
+}
+.sec li{
+  font-size: 30px;
+  margin :20px 90px;  
+}
+.cr{
+  font-size: 20px;
 }

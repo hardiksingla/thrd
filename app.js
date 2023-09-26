@@ -12,9 +12,10 @@ const clientWidth = window.innerWidth;
 
 if(clientWidth > 1000) {  
   var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 5,
+    slidesPerView: 6,
     spaceBetween: 30,
     centeredSlides: true,
+    initialSlide: 3,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -24,7 +25,9 @@ if(clientWidth > 1000) {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 2,
     spaceBetween: 30,
+    loop: true,    
     centeredSlides: true,
+    initialSlide: 3,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -35,9 +38,14 @@ if(clientWidth > 1000) {
 var swiper = new Swiper(".heroSwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
-  loop: true,
+  loop: true,  
+  initialSlide: 1,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
 });
+
+
+var sneakImage = document.querySelector(".mySwiper .swiper-wrapper .swiper-slide-active img");
+root.style.setProperty("--img-height", sneakImage.height + "px");
